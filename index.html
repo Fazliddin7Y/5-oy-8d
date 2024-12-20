@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+  <section id="login-section" class="h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded shadow-lg w-96">
+      <h1 class="text-2xl font-bold mb-4">Login</h1>
+      <input id="username" type="text" placeholder="Имя пользователя" class="border p-2 w-full mb-4">
+      <input id="password" type="password" placeholder="Пароль" class="border p-2 w-full mb-4">
+      <button id="login-btn" class="bg-blue-500 text-white py-2 px-4 rounded w-full">Войти</button>
+    </div>
+  </section>
+
+  <div id="admin-panel" class="hidden">
+    <header class="bg-blue-600 text-white p-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Intex-Market</h1>
+      <nav class="space-x-4">
+        <button id="products-btn" class="bg-white text-blue-600 px-4 py-2 rounded">Продукты</button>
+        <button id="orders-btn" class="bg-white text-blue-600 px-4 py-2 rounded">Заказы</button>
+      </nav>
+    </header>
+
+    <section id="products-section" class="p-8 hidden">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-2xl font-bold">Продукты</h2>
+        <button id="add-product-btn" class="bg-green-500 text-white px-4 py-2 rounded">+ Добавить продукт</button>
+      </div>
+      <div id="products-list" class="grid grid-cols-3 gap-4"></div>
+    </section>
+
+    <section id="orders-section" class="p-8 hidden">
+      <h2 class="text-2xl font-bold mb-4">Заказы</h2>
+      <div id="orders-list" class="grid grid-cols-3 gap-4"></div>
+    </section>
+  </div>
+
+  <div id="product-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded shadow-lg w-96">
+      <h2 class="text-xl font-bold mb-4">Добавить продукт</h2>
+      <input id="product-name" type="text" placeholder="Название продукта" class="border p-2 w-full mb-4">
+      <input id="product-price" type="text" placeholder="Цена продукта" class="border p-2 w-full mb-4">
+      <input id="product-quantity" type="number" placeholder="Количество" class="border p-2 w-full mb-4">
+      <input id="product-image" type="text" placeholder="URL изображения" class="border p-2 w-full mb-4">
+      <div class="flex justify-end space-x-2">
+        <button id="close-modal-btn" class="bg-gray-500 text-white px-4 py-2 rounded">Отмена</button>
+        <button id="save-product-btn" class="bg-blue-500 text-white px-4 py-2 rounded">Сохранить</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./main.js"></script>
+</body>
+</html>
